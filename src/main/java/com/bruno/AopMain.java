@@ -3,6 +3,7 @@ package com.bruno;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.bruno.model.Circle;
 import com.bruno.service.ShapeService;
 
 public class AopMain {
@@ -15,6 +16,9 @@ public class AopMain {
 		System.out.println(shapeService.getCircle().getName());
 		
 		System.out.println(shapeService.getTriangle().getName());
+		
+		Circle circle = shapeService.getCircle();
+		circle.calculateDiameter(4);
 	}
 
 }
