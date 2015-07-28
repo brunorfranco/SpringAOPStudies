@@ -17,6 +17,8 @@ public class AopMain {
 		
 		System.out.println(shapeService.getTriangle().getName());
 		
+		shapeService.getCircle().setName("Circle name");
+		
 		Circle circle = shapeService.getCircle();
 		circle.calculateDiameter(4);
 		

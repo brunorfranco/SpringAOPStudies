@@ -1,5 +1,7 @@
 package com.bruno.aspect;
 
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -7,9 +9,19 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class LoggingAspect {
 	
-	@Before("execution(public * com.bruno.model.*.get*(..))")
-	public void loggingAdvice(){
-		System.out.println("Advice run. Get Method");
+	@Before("args(name)")
+	public void loggingBeforeAdvice(String name){
+		System.out.println("Before Advice run. Get Method " + name);
+	}
+	
+	@After("args(name)")
+	public void loggingAfterAdvice(String name){
+		System.out.println("After Advice run. Get Method " + name);
+	}
+	
+	@AfterReturning(pointcut="execution(public * com.bruno.model.*.getName(..))", returning="nameReturn")
+	public void loggingAfterReturnAdvice(String nameReturn){
+		System.out.println("After Return Advice run. Get Method " + nameReturn);
 	}
 	
 	@Before("calculateDiameter()")
