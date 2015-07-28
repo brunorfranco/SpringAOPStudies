@@ -19,6 +19,8 @@ public class AopMain {
 		
 		Circle circle = shapeService.getCircle();
 		circle.calculateDiameter(4);
+		
+		circle.testingReceivingTwoArguments("First args", 2);
 	}
 
 }

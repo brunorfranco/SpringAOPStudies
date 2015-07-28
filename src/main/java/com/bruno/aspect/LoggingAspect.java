@@ -20,4 +20,8 @@ public class LoggingAspect {
 	@Pointcut("execution(public * com.bruno.model.Circle.calculateDiameter(..))")
 	public void calculateDiameter(){}
 
+	@Before("args(myString,..)")
+	public void loggingAdviceTwoParams(String myString){
+		System.out.println("Inside aspect " + myString);
+	}
 }

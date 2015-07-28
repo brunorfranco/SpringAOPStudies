@@ -24,4 +24,8 @@ public class Circle {
 	public Double calculateDiameter(double radius){
 		return radius * 2;
 	}
+	
+	public void testingReceivingTwoArguments(String first, Integer second){
+		System.out.println("Inside the method: " + first + second);
+	}
 }
