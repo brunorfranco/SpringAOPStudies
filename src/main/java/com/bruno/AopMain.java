@@ -23,6 +23,8 @@ public class AopMain {
 		circle.calculateDiameter(4);
 		
 		circle.testingReceivingTwoArguments("First args", 2);
+		
+		circle.testAroundAspect();
 	}
 
 }

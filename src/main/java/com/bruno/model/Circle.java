@@ -28,4 +28,8 @@ public class Circle {
 	public void testingReceivingTwoArguments(String first, Integer second){
 		System.out.println("Inside the method: " + first + second);
 	}
+	
+	public String testAroundAspect(){
+		return "Testing the Around Aspect";
+	}
 }
